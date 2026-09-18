@@ -1,0 +1,25 @@
+{% extends "notes/base.html" %}
+
+{% block title %}Get-it - Editar anotação{% endblock %}
+
+{% block content %}
+<form class="form-card" method="post">
+  {% csrf_token %}
+  <input
+    class="form-card-title"
+    type="text"
+    name="titulo"
+    value="{{ note.title }}"
+  />
+  <textarea class="autoresize" name="detalhes">{{ note.content }}</textarea>
+  <input
+    class="form-card-title"
+    type="text"
+    name="tag"
+    placeholder="Tag (opcional)"
+    value="{{ note.tag.name|default:'' }}"
+  />
+  <button class="btn" type="submit">Salvar</button>
+  <a class="btn btn-secondary" href="{% url 'index' %}">Cancelar</a>
+</form>
+{% endblock %}

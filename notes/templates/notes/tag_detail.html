@@ -1,0 +1,13 @@
+{% extends "notes/base.html" %}
+
+{% block title %}Get-it - {{ tag.name }}{% endblock %}
+
+{% block content %}
+<h1 class="card-title">{{ tag.name }}</h1>
+
+<div class="card-container">
+  {% for note in notes %}
+  {% include "notes/components/note.html" %}
+  {% endfor %}
+</div>
+{% endblock %}

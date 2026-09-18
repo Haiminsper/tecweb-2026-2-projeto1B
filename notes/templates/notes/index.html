@@ -1,0 +1,28 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+<form class="form-card" method="post">
+  {% csrf_token %}
+  <input
+    class="form-card-title"
+    type="text"
+    name="titulo"
+    placeholder="Título"
+  />
+  <textarea
+    class="autoresize"
+    name="detalhes"
+    placeholder="Digite o conteúdo..."
+  ></textarea>
+  <input class="form-card-title" type="text" name="tag" placeholder="Tag (opcional)" />
+  <button class="btn" type="submit">Criar</button>
+</form>
+
+<a class="btn-secondary btn" href="{% url 'tags_list' %}">Ver tags</a>
+
+<div class="card-container">
+  {% for note in notes %}
+  {% include "notes/components/note.html" %}
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-actions">
+    <a class="card-action" href="{% url 'edit' note.id %}">Editar</a>
+    <a class="card-action" href="{% url 'delete' note.id %}">Excluir</a>
+  </div>
+  <h3 class="card-title">{{ note.title }}</h3>
+  <div class="card-content">
+    <p>{{ note.content }}</p>
+  </div>
+  {% if note.tag %}
+  <p class="card-tag">
+    <a href="{% url 'tag_detail' note.tag.id %}">#{{ note.tag.name }}</a>
+  </p>
+  {% endif %}
+</div>
