@@ -325,31 +325,6 @@ body {
   cursor: pointer;
 }
 
-.card-tag {
-  font-family: "Roboto", sans-serif;
-  font-size: 13px;
-  margin-top: 8px;
-}
-
-.card-tag a {
-  color: #4c4c4c;
-}
-
-.tag-list {
-  width: 100%;
-  max-width: 572px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-}
-
-.tag-list a {
-  color: #2c2c2c;
-  text-decoration: underline;
-}
-
 .form-error {
   color: #c0392b;
   font-family: "Roboto", sans-serif;

@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import redirect, render
 
 from .models import Note, Tag
 
@@ -21,13 +21,13 @@ def index(request):
 
 
 def delete(request, note_id):
-    note = get_object_or_404(Note, id=note_id)
+    note = Note.objects.get(id=note_id)
     note.delete()
     return redirect('index')
 
 
 def edit(request, note_id):
-    note = get_object_or_404(Note, id=note_id)
+    note = Note.objects.get(id=note_id)
 
     if request.method == 'POST':
         tag_name = request.POST.get('tag', '').strip()
@@ -51,6 +51,6 @@ def tags_list(request):
 
 
 def tag_detail(request, tag_id):
-    tag = get_object_or_404(Tag, id=tag_id)
+    tag = Tag.objects.get(id=tag_id)
     notes = Note.objects.filter(tag=tag)
     return render(request, 'notes/tag_detail.html', {'tag': tag, 'notes': notes})

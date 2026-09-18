@@ -7,9 +7,4 @@
   <div class="card-content">
     <p>{{ note.content }}</p>
   </div>
-  {% if note.tag %}
-  <p class="card-tag">
-    <a href="{% url 'tag_detail' note.tag.id %}">#{{ note.tag.name }}</a>
-  </p>
-  {% endif %}
 </div>

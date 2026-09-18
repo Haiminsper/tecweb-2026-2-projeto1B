@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1 class="card-title">Tags</h1>
-<ul class="tag-list">
+<ul>
   {% for tag in tags %}
   <li><a href="{% url 'tag_detail' tag.id %}">{{ tag.name }}</a></li>
   {% endfor %}
