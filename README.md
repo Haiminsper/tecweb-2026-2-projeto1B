@@ -2,4 +2,4 @@
 
 ## Link da aplicação publicada
 
-TODO: adicionar o link do deploy no Render.
+https://getit-xyyl.onrender.com
